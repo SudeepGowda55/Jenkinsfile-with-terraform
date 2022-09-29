@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'SUDEEP', description: 'hai i am too bad')
+        string(name: "Sudeep", description: "enter anything")
     }
 
     stages {
