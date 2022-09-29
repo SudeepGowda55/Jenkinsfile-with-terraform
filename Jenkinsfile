@@ -15,7 +15,7 @@ pipeline {
         stage ('sending docker file to ansible over ssh connection'){
             steps{
                 sshagent(['Ansible']) {
-                    sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10 --auto-approve'
+                    sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10'
                     sh 'scp /var/lib/jenkins/workspace/kubernetes/* root@74.220.21.52:/home/civostatsd'
                 }
             }
