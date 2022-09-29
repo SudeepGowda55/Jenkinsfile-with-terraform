@@ -12,9 +12,10 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/SudeepGowda55/Jenkinsfile-with-terraform.git'
             }
         }
-        stage ('initial call'){
-            steps {
-                echo "hai i am badass"
+        stage ('sending docker file to ansible over ssh connection'){
+            sshagent(['Ansible']) {
+              sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10'
+              sh 'scp /var/lib/jenkins/workspace/kubernetes/* root@192.168.1.10:/home/civostatsd'
             }
         }
         stage ('second call'){
