@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sshagent(credentials:['ansible-server']) {
                     sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10 cd /home/civostatsd'
-                    sh "ssh -o StrictHostKeyChecking=no root@192.168.1.10 docker image --tag $JOB_NAME:v1.$BUILD_ID ."
+                    sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10 docker build -t $JOB_NAME:v1.$BUILD_ID .'
                 }
             }
         }
