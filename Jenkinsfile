@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sshagent(credentials:['ansible-server']) {
                     sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10 docker tag $JOB_NAME:v1.$BUILD_ID sudeepgowda55/$JOB_NAME:v1.$BUILD_ID'
-                    sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10 docker push sudeepgowda55/$JOB_NAME:latest'
+                    sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10 docker push sudeepgowda55/$JOB_NAME:v1.$BUILD_ID'
                     sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10 docker tag $JOB_NAME:v1.$BUILD_ID sudeepgowda55/$JOB_NAME:latest'
                     sh 'ssh -o StrictHostKeyChecking=no root@192.168.1.10 docker push sudeepgowda55/$JOB_NAME:latest'
                 }
