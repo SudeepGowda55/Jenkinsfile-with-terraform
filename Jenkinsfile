@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'sudeep', description: 'hai i am too bad')
+        string(name: 'SUDEEP', description: 'hai i am too bad')
     }
 
     stages {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('second call'){
             steps {
-                echo "hai i am more ${params.sudeep}"
+                echo "hai i am more ${params.SUDEEP}"
             }
         }
         // stage ('terraform plan'){
