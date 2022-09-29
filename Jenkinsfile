@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('second call'){
             steps {
-                echo "hai i am more bad"
+                echo "hai i am more ${params.sudeep}"
             }
         }
         // stage ('terraform plan'){
